@@ -1,0 +1,205 @@
+fileFormatVersion: 2
+guid: c42508eb75c353e4cbb2dbad50f34ea5
+timeCreated: 1483691750
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: buddy_rig5:buddy_antena
+    100002: buddy_rig5:buddy_body
+    100004: buddy_rig5:buddy_F:buddy
+    100006: buddy_rig5:buddy_F:buddy_antena
+    100008: buddy_rig5:buddy_F:buddy_body
+    100010: buddy_rig5:buddy_F:buddy_face
+    100012: buddy_rig5:buddy_F:buddy_hand_L
+    100014: buddy_rig5:buddy_F:buddy_hand_R
+    100016: buddy_rig5:buddy_face
+    100018: buddy_rig5:buddy_facial_F2:talk
+    100020: buddy_rig5:buddy_facial_F:buddy
+    100022: buddy_rig5:buddy_jr_head_a_jnt
+    100024: buddy_rig5:buddy_jr_head_b_jnt
+    100026: buddy_rig5:buddy_jr_lf_clavicle_jnt
+    100028: buddy_rig5:buddy_jr_lf_elbow_jnt
+    100030: buddy_rig5:buddy_jr_lf_hand_jnt
+    100032: buddy_rig5:buddy_jr_lf_index_a_jnt
+    100034: buddy_rig5:buddy_jr_lf_index_b_jnt
+    100036: buddy_rig5:buddy_jr_lf_index_c_jnt
+    100038: buddy_rig5:buddy_jr_lf_index_d_jnt
+    100040: buddy_rig5:buddy_jr_lf_thumb_a_jnt
+    100042: buddy_rig5:buddy_jr_lf_thumb_b_jnt
+    100044: buddy_rig5:buddy_jr_lf_thumb_c_jnt
+    100046: buddy_rig5:buddy_jr_lf_thumb_d_jnt
+    100048: buddy_rig5:buddy_jr_lf_upArm_jnt
+    100050: buddy_rig5:buddy_jr_lf_wrist_jnt
+    100052: buddy_rig5:buddy_jr_neck_jnt
+    100054: buddy_rig5:buddy_jr_rt_clavicle_jnt
+    100056: buddy_rig5:buddy_jr_rt_elbow_jnt
+    100058: buddy_rig5:buddy_jr_rt_hand_jnt
+    100060: buddy_rig5:buddy_jr_rt_index_a_jnt
+    100062: buddy_rig5:buddy_jr_rt_index_b_jnt
+    100064: buddy_rig5:buddy_jr_rt_index_c_jnt
+    100066: buddy_rig5:buddy_jr_rt_index_d_jnt
+    100068: buddy_rig5:buddy_jr_rt_thumb_a_jnt
+    100070: buddy_rig5:buddy_jr_rt_thumb_b_jnt
+    100072: buddy_rig5:buddy_jr_rt_thumb_c_jnt
+    100074: buddy_rig5:buddy_jr_rt_thumb_d_jnt
+    100076: buddy_rig5:buddy_jr_rt_upArm_jnt
+    100078: buddy_rig5:buddy_jr_rt_wrist_jnt
+    100080: buddy_rig5:buddy_jr_Skeleton_grp
+    100082: buddy_rig5:buddy_jr_spine_end_jnt
+    100084: buddy_rig5:buddy_jr_spine_hi_jnt
+    100086: buddy_rig5:buddy_jr_spine_low_jnt
+    100088: buddy_rig5:buddy_jr_spine_mid_jnt
+    100090: buddy_rig5:buddy_normal_eye
+    100092: buddy_rig5:g_g_g_hand
+    100094: buddy_rig5:g_g_hand
+    100096: buddy_rig5:g_hand
+    100098: buddy_rig5:g_normal_eye
+    100100: buddy_rig5:joint1
+    100102: buddy_rig5:joint2
+    100104: buddy_rig5:joint3
+    100106: //RootNode
+    400000: buddy_rig5:buddy_antena
+    400002: buddy_rig5:buddy_body
+    400004: buddy_rig5:buddy_F:buddy
+    400006: buddy_rig5:buddy_F:buddy_antena
+    400008: buddy_rig5:buddy_F:buddy_body
+    400010: buddy_rig5:buddy_F:buddy_face
+    400012: buddy_rig5:buddy_F:buddy_hand_L
+    400014: buddy_rig5:buddy_F:buddy_hand_R
+    400016: buddy_rig5:buddy_face
+    400018: buddy_rig5:buddy_facial_F2:talk
+    400020: buddy_rig5:buddy_facial_F:buddy
+    400022: buddy_rig5:buddy_jr_head_a_jnt
+    400024: buddy_rig5:buddy_jr_head_b_jnt
+    400026: buddy_rig5:buddy_jr_lf_clavicle_jnt
+    400028: buddy_rig5:buddy_jr_lf_elbow_jnt
+    400030: buddy_rig5:buddy_jr_lf_hand_jnt
+    400032: buddy_rig5:buddy_jr_lf_index_a_jnt
+    400034: buddy_rig5:buddy_jr_lf_index_b_jnt
+    400036: buddy_rig5:buddy_jr_lf_index_c_jnt
+    400038: buddy_rig5:buddy_jr_lf_index_d_jnt
+    400040: buddy_rig5:buddy_jr_lf_thumb_a_jnt
+    400042: buddy_rig5:buddy_jr_lf_thumb_b_jnt
+    400044: buddy_rig5:buddy_jr_lf_thumb_c_jnt
+    400046: buddy_rig5:buddy_jr_lf_thumb_d_jnt
+    400048: buddy_rig5:buddy_jr_lf_upArm_jnt
+    400050: buddy_rig5:buddy_jr_lf_wrist_jnt
+    400052: buddy_rig5:buddy_jr_neck_jnt
+    400054: buddy_rig5:buddy_jr_rt_clavicle_jnt
+    400056: buddy_rig5:buddy_jr_rt_elbow_jnt
+    400058: buddy_rig5:buddy_jr_rt_hand_jnt
+    400060: buddy_rig5:buddy_jr_rt_index_a_jnt
+    400062: buddy_rig5:buddy_jr_rt_index_b_jnt
+    400064: buddy_rig5:buddy_jr_rt_index_c_jnt
+    400066: buddy_rig5:buddy_jr_rt_index_d_jnt
+    400068: buddy_rig5:buddy_jr_rt_thumb_a_jnt
+    400070: buddy_rig5:buddy_jr_rt_thumb_b_jnt
+    400072: buddy_rig5:buddy_jr_rt_thumb_c_jnt
+    400074: buddy_rig5:buddy_jr_rt_thumb_d_jnt
+    400076: buddy_rig5:buddy_jr_rt_upArm_jnt
+    400078: buddy_rig5:buddy_jr_rt_wrist_jnt
+    400080: buddy_rig5:buddy_jr_Skeleton_grp
+    400082: buddy_rig5:buddy_jr_spine_end_jnt
+    400084: buddy_rig5:buddy_jr_spine_hi_jnt
+    400086: buddy_rig5:buddy_jr_spine_low_jnt
+    400088: buddy_rig5:buddy_jr_spine_mid_jnt
+    400090: buddy_rig5:buddy_normal_eye
+    400092: buddy_rig5:g_g_g_hand
+    400094: buddy_rig5:g_g_hand
+    400096: buddy_rig5:g_hand
+    400098: buddy_rig5:g_normal_eye
+    400100: buddy_rig5:joint1
+    400102: buddy_rig5:joint2
+    400104: buddy_rig5:joint3
+    400106: //RootNode
+    2300000: buddy_rig5:buddy_normal_eye
+    3300000: buddy_rig5:buddy_normal_eye
+    4300000: buddy_rig5:buddy_F:buddy_body
+    4300002: buddy_rig5:buddy_F:buddy_face
+    4300004: buddy_rig5:buddy_F:buddy_antena
+    4300006: buddy_rig5:buddy_normal_eye
+    4300008: buddy_rig5:buddy_F:buddy_hand_R
+    4300010: buddy_rig5:buddy_F:buddy_hand_L
+    4300012: buddy_rig5:buddy_body
+    4300014: buddy_rig5:buddy_face
+    4300016: buddy_rig5:buddy_antena
+    7400000: emo_talk
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: buddy_rig5:buddy_antena
+    13700002: buddy_rig5:buddy_body
+    13700004: buddy_rig5:buddy_F:buddy_antena
+    13700006: buddy_rig5:buddy_F:buddy_body
+    13700008: buddy_rig5:buddy_F:buddy_face
+    13700010: buddy_rig5:buddy_F:buddy_hand_L
+    13700012: buddy_rig5:buddy_F:buddy_hand_R
+    13700014: buddy_rig5:buddy_face
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
