@@ -18,6 +18,11 @@ public class AdventureUIController : MonoBehaviour {
 	
 	}
 
+	public void Init()
+	{
+		kureeObj.transform.localPosition = new Vector3 (-400, -450, 0);
+	}
+
     public void MikeToggleButton()
     {
         if(toggleMikeBtn.isOn)

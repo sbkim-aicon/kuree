@@ -34,11 +34,12 @@ namespace FrostweepGames.SpeechRecognition.Google.Cloud
                      _isReadyToRecord = true,
                      _isStarted = false;
 
-
         private List<float> _workingData = new List<float>();
         private float[] _checkingSamples;
 
         public bool IsCanWork { get; private set; }
+
+		public tmp_controller tmpCtr;
 
         #region ctors
         public RuntimeSpeechDetection() { }
@@ -56,6 +57,11 @@ namespace FrostweepGames.SpeechRecognition.Google.Cloud
 #endif
         }
         #endregion ctors
+
+		void Awake()
+		{
+			tmpCtr = GameObject.Find ("controllerObjet").GetComponent<tmp_controller> ();
+		}
 
         public void Update()
         {
@@ -97,7 +103,7 @@ namespace FrostweepGames.SpeechRecognition.Google.Cloud
             _micRecordClip = Microphone.Start(_microphoneDevice, true, 1, _sampleRate);
 
             _checkingSamples = new float[_micRecordClip.samples * _micRecordClip.channels];
-
+			Debug.Log ("Start Runtime Detection");
             _isStarted = true;
             _isRecord = false;
             _isPlaying = false;
@@ -111,12 +117,12 @@ namespace FrostweepGames.SpeechRecognition.Google.Cloud
         }
 
         public void StopRuntimeDetection()
-        {
+		{
+			ForcedStop ();
             _checkingSamples = null;
             _workingData = null;
             _isStarted = false;
             Microphone.End(_microphoneDevice);
-
             if (_micRecordClip != null)
                 MonoBehaviour.Destroy(_micRecordClip);
         }
@@ -169,9 +175,12 @@ namespace FrostweepGames.SpeechRecognition.Google.Cloud
 
         private void Listen()
         {
+			if(tmpCtr == null)
+				tmpCtr = GameObject.Find ("controllerObjet").GetComponent<tmp_controller> ();
+			
             if (_isReadyToRecord)
             {
-                int positionOfSample = CheckingSpeech();
+				int positionOfSample = 0; // CheckingSpeech();
 
                 if (!_isRecord)
                 {
@@ -199,38 +208,45 @@ namespace FrostweepGames.SpeechRecognition.Google.Cloud
                 }
                 else if (positionOfSample < 0)
                 {
-                    if (!_isRecord)
-                    {
-                        _positionOfSamplesToPlay = _positionOfLastSample;
-                    }
-                    else
-                    {
-                        _loopWithoutRecording++;
-
-                        if (_loopWithoutRecording >= _maxLoopWithoutRecord)
-                        {
-                            _endTimeToTalking = 0;
-                            _isRecord = false;
-                            _isPlaying = true;
-                            _isReadyToRecord = false;
-                            _loopWithoutRecording = 0;
-
-                            RecordSound();
-
-                            if (_createdClip != null)
-                               MonoBehaviour.Destroy(_createdClip);
-
-                            _createdClip = AudioClip.Create("Speech", _workingData.Count, 1, _sampleRate, false);
-                            _createdClip.SetData(_workingData.ToArray(), 0);
-
-                            if (FinishedRecordEvent != null)
-                                FinishedRecordEvent();
-                        }
-                    }
+					ForcedStop ();
                 }
                 else _loopWithoutRecording = 0;
             }
         }
+
+		private void ForcedStop()
+		{
+			if (!_isRecord)
+			{
+				_positionOfSamplesToPlay = _positionOfLastSample;
+				//						tmpCtr.DisplayTimeCheck (Time.deltaTime, 2);
+			}
+			else
+			{
+				// _loopWithoutRecording++;
+
+				// if (_loopWithoutRecording >= _maxLoopWithoutRecord)
+				{
+					_endTimeToTalking = 0;
+					_isRecord = false;
+					_isPlaying = true;
+					_isReadyToRecord = false;
+					_loopWithoutRecording = 0;
+
+					RecordSound();
+
+					if (_createdClip != null)
+						MonoBehaviour.Destroy(_createdClip);
+
+					_createdClip = AudioClip.Create("Speech", _workingData.Count, 1, _sampleRate, false);
+					_createdClip.SetData(_workingData.ToArray(), 0);
+
+					if (FinishedRecordEvent != null)
+						FinishedRecordEvent();
+				}
+			}
+
+		}
 
         private void RecordSound()
         {

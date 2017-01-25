@@ -11,6 +11,7 @@ namespace FrostweepGames.SpeechRecognition.Google.Cloud
 
         public static void AudioClipToPCMBytesArray(AudioClip clip, out byte[] bytes)
         {
+//			Debug.Log (Time.time);
             MemoryStream stream = new MemoryStream();
             using (var fileStream = CreateEmpty(stream))
             {

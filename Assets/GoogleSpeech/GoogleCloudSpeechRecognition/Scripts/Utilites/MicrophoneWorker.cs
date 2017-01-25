@@ -48,9 +48,10 @@ namespace FrostweepGames.SpeechRecognition.Google.Cloud
                 MonoBehaviour.Destroy(_audioClip);
 
             _audioClip = Microphone.Start(_microphoneDevice, _isLoop, _recordLength, _sampleRate);
+//			_recordLength = _audioClip.length;
             IsRecording = true;
 
-            if (StartedRecordEvent != null)
+			if (StartedRecordEvent != null)
                 StartedRecordEvent();
         }
 

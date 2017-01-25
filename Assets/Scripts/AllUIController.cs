@@ -4,6 +4,7 @@ using System.Collections;
 public class AllUIController : MonoBehaviour {
 
 	[SerializeField] private tmp_controller tmpCtr;
+	[SerializeField] private AdventureUIController adUICtr;
 
     public FadeAniCotroller fadeAniControll;
     public ActivityController activityControll;
@@ -28,6 +29,7 @@ public class AllUIController : MonoBehaviour {
 		tmpCtr.userText.text = "";
         fadeAniControll.changeUIName = uiName;
         fadeAniControll.ani.Play();
+		adUICtr.Init ();
     }
 
     public void OpenChat()

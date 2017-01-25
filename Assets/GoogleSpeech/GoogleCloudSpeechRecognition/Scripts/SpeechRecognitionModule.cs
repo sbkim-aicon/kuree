@@ -51,10 +51,11 @@ namespace FrostweepGames.SpeechRecognition.Google.Cloud
 
         [Header("Recording Params")]
         [Tooltip("Record length in seconds")]
-        public int recordLength = 10;
+        public int recordLength = 3;
         public bool isLoopRecording = true;
         public bool isRuntimeDetection = false;
         public float runtimeSpeechDetectionTreshold = 0.005f;
+		public tmp_controller tmpCtr;
 
         private void Awake()
         {
@@ -78,23 +79,34 @@ namespace FrostweepGames.SpeechRecognition.Google.Cloud
             _runtimeSpeechDetector.StartedRecordEvent += StartedRecordEventHandler;
             _runtimeSpeechDetector.FinishedRecordEvent += FinishedRecordEventHandler;
             _runtimeSpeechDetector.RecordFailedEvent += RecordFailedEventHandler;
+
+			if (tmpCtr == null) {
+				tmpCtr = GameObject.Find ("controllerObjet").GetComponent<tmp_controller> ();
+			}
         }
 
         private void Update()
         {
-            if (isRuntimeDetection)
-                _runtimeSpeechDetector.Update();
+			if (isRuntimeDetection) {
+//				tmpCtr.DisplayTimeCheck (Time.deltaTime, 3);
+				_runtimeSpeechDetector.Update ();
+			}
 
             if (isRecognitionProcessing)
-            {
+			{
+//				tmpCtr.DisplayTimeCheck (Time.deltaTime, 3);
+//				Debug.Log (Time.time);
                 if(_requestWWW != null && _requestWWW.isDone)
-                {
+				{
+//					Debug.Log (Time.time);
                     if(string.IsNullOrEmpty(_requestWWW.error))
-                    {
+					{			
+//						Debug.Log (Time.time);
                         ProcessParseResponse(_requestWWW.text);
                     }
                     else
-                    {
+					{
+//						Debug.Log (Time.time);
                         if (SpeechRecognizedFailedEvent != null)
                             SpeechRecognizedFailedEvent(_requestWWW.error);
 
@@ -154,9 +166,20 @@ namespace FrostweepGames.SpeechRecognition.Google.Cloud
                 return;
             }
 
+			if (tmpCtr != null) {
+//				tmpCtr.speechModule.isRuntimeDetection = false;
+//				tmpCtr.chatUICtr.toggleMikeBtn.isOn = false;
+//				tmpCtr.chatUICtr.MikeToggleButton ();
+				tmpCtr.sendSttCount++;
+				tmpCtr.text [7].text = "Request Index : " + tmpCtr.sendSttCount.ToString ();
+			}
+
+//			Debug.Log (Time.time);
+
             byte[] buffer;
             PCMWrapper.AudioClipToPCMBytesArray(clip, out buffer);
 
+			Debug.Log ("Recognize");
             _speechRecognitionRequest = new RecognitionRequest();
             _speechRecognitionRequest.config.encoding = audioEncoding.ToString();
             _speechRecognitionRequest.config.languageCode = language.ToString().Replace("_", "-");
@@ -168,6 +191,7 @@ namespace FrostweepGames.SpeechRecognition.Google.Cloud
 
             buffer = Encoding.UTF8.GetBytes(JsonUtility.ToJson(_speechRecognitionRequest));
 
+//			tmpCtr.DisplayTimeCheck (Time.deltaTime, 2);
             var form = new WWWForm();
             var headers = form.headers;
 
@@ -177,6 +201,9 @@ namespace FrostweepGames.SpeechRecognition.Google.Cloud
 
             _requestWWW = new WWW(_requestUrl, buffer, headers);
 
+//			Debug.Log (Time.time);
+
+			tmpCtr.timechk = 0;
             isRecognitionProcessing = true;
         }
 
@@ -214,7 +241,7 @@ namespace FrostweepGames.SpeechRecognition.Google.Cloud
         private void FinishedRecordEventHandler()
         {
             Debug.Log("FinishedRecordEventHandler");
-
+			Debug.Log ("Send STT");
             if(isRuntimeDetection)
                 Recognize(_runtimeSpeechDetector.GetRecordedAudio());
             else
