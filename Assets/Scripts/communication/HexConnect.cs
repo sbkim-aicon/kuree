@@ -9,7 +9,8 @@ using Pathfinding.Serialization.JsonFx;
 public class HexConnect : MonoBehaviour 
 {
 
-	private const string HexagramURL = "https://hex-os-buddy-jr-api.herokuapp.com";
+	//	private const string HexagramURL = "https://hex-os-buddy-jr-api.herokuapp.com";
+	private const string HexagramURL = "http://hexagram.io/admin/aicon.io";
 	private const string chat = "/v1/users/sbkim/chats/buddy";
 	private const string AccesseKey = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNia2ltIiwiZXhwaXJlcyI6IjIwMTctMTItMDdUMTc6MzU6MjEuMjc3WiJ9.4xbKA0cmIXyhiztPpfGPtmTibutJPZNFD_-EN5rqD9k";
 	public tmp_controller tmpCtr;
